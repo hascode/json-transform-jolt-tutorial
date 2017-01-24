@@ -1,6 +1,7 @@
 package com.hascode.tutorial;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.Filter;
@@ -34,7 +35,10 @@ public class JsonTransformerFilter implements Filter {
         String inputJSON = res.getContent();
         Object transformedOutput = chainr.transform(JsonUtils.jsonToObject(inputJSON));
         System.out.printf("transformed json: %s\n", transformedOutput);
-        response.getWriter().write("" + transformedOutput);
+
+        PrintWriter writer = response.getWriter();
+        writer.write(transformedOutput.toString());
+        writer.flush();
     }
 
     @Override

@@ -40,12 +40,11 @@ public class CustomResponseWrapper extends HttpServletResponseWrapper {
 
                 @Override
                 public void flush() throws IOException {
-                    baos.flush();
                 }
 
                 @Override
                 public boolean isReady() {
-                    return true;
+                    return false;
                 }
 
                 @Override
