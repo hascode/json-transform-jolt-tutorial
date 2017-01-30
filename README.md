@@ -17,7 +17,13 @@ $ mvn clean compile exec:java -Dexec.mainClass=com.hascode.tutorial.RestServer
 ```
 $ mvn clean compile exec:java -Dexec.mainClass=com.hascode.tutorial.CustomJsonTransformer
 ```
+## Using Apache Camel
 
+```
+mvn clean compile exec:java -Dexec.mainClass=com.hascode.tutorial.CamelExample
+```
+
+Now copy the JSON file to the directory named *scanned* and you should receive the transformed JSON file in the directory named *transformed*.
 
 ## More
 For more of my experiments please feel free to visit my blog at [www.hascode.com] or to have a look at my [project repositories].
